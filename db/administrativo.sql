@@ -183,6 +183,16 @@ CREATE TABLE IF NOT EXISTS `administrativo`.`ingreso` (
     ON UPDATE NO ACTION)
 ENGINE = InnoDB;
 
+-- -----------------------------------------------------
+-- Table `administrativo`.`pago`
+-- -----------------------------------------------------
+CREATE TABLE IF NOT EXISTS `administrativo`.`pago` (
+	`idpago` INT NOT NULL AUTO_INCREMENT,
+	`llave` VARCHAR(100) NOT NULL,	
+	PRIMARY KEY (`idpago`))
+ENGINE = InnoDB;
+
+CREATE UNIQUE INDEX `llave_UNIQUE` ON pago (`llave` ASC) ;
 
 SET SQL_MODE=@OLD_SQL_MODE;
 SET FOREIGN_KEY_CHECKS=@OLD_FOREIGN_KEY_CHECKS;

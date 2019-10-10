@@ -39,9 +39,11 @@ public class Conexion {
         
         UsuarioDao dao = new UsuarioDao();
         Usuario user = new Usuario();
+        PagoDao pDao = new PagoDao();
+        
         user.setLoguin("crispancho");
         user.setClave("1993");
-        System.out.println(dao.validarUsuario(user).isEmpty());
+        System.out.println(pDao.consultaLlave());
     }
 }
 

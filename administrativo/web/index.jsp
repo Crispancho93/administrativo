@@ -5,6 +5,7 @@
 --%>
 
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
+<%@page session="true"%>
 <!DOCTYPE html>
 <html>
     <head>
@@ -63,9 +64,10 @@
                 HttpSession miSesion = request.getSession();
                 
                 // atributos de las sesión
-                miSesion.setMaxInactiveInterval(28800);
+                miSesion.setMaxInactiveInterval(10800);
                 miSesion.setAttribute("loguin", request.getAttribute("loguin"));
                 miSesion.setAttribute("tipoUsuario", request.getAttribute("tipoUsuario"));
+                miSesion.setAttribute("llave", request.getAttribute("llave"));
                 
                 // redireccionamos al home
                 response.sendRedirect("home.jsp");

@@ -13,6 +13,7 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import model.PagoDao;
 import model.UsuarioDao;
 
 /**
@@ -61,9 +62,13 @@ public class ValidarUsuario extends HttpServlet {
                 request.setAttribute("UsuarioValidado", "0");      
             }
         }
-            
-            
-
+        
+        /**
+         * enviar llave
+         */
+        PagoDao pDao = new PagoDao();
+        request.setAttribute("llave", pDao.consultaLlave());
+        
         request.getRequestDispatcher("index.jsp").forward(request, response);
     }
 
