@@ -16,7 +16,7 @@ class Conexion {
     public function getConexion() {
 
         try {
-            $conn = new PDO('mysql:host=localhost;dbname=administrativo', 'root', 'Colombia.123');
+            $conn = new PDO('mysql:host=localhost;dbname=administrativo;charset=8859-1', 'root', 'Colombia.123');
             
             return $conn;
             
